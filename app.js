@@ -1,8 +1,13 @@
 const express = require('express');
+
+const connectDB = require("./config/db");
 const app = express();
-const mongoose = require('mongoose');
-const dotenv = require('dotenv');
+
+connectDB();
+// const mongoose = require('mongoose');
 const path = require('path');
+//connectionb db ;
+
 const personRouter = require ('./routes/Users')
 //ici les rest des routes : 
 const authentificationRouter = require ('./routes/Auth');
@@ -14,7 +19,7 @@ const profilRouter = require ('./routes/Profil')
 //**fin des routes  */
 //middelwar thing to execute things while we enter an other page 
 //ici permet d'utiliser le req?body
-app.use(express.json());
+app.use(express.json({extended : false}));
 app.use(express.urlencoded({ extended: false }));
 
 app.use(express.static(path.join(__dirname, 'public')));
@@ -25,15 +30,17 @@ app.get('/', (req,res)=>{
 //**********/ connect
 
 
-//*********Install and setup mongoose::
-dotenv.config({path:__dirname + '/config/.env'});
-mongoose.connect(process.env.MONGO_URI,{useFindAndModify: false,
-     useNewUrlParser: true, 
-     useUnifiedTopology: true,useCreateIndex:true}).then(()=>{
-    console.log('connected')
-}).catch(()=>{
-    console.log("not connected")
-})
+// //*********Install and setup mongoose::
+// dotenv.config({path:__dirname + '/config/.env'});
+// mongoose.connect(process.env.MONGO_URI,{useFindAndModify: false,
+//      useNewUrlParser: true, 
+//      useUnifiedTopology: true,useCreateIndex:true}).then(()=>{
+//     console.log('connected')
+// }).catch(()=>{
+//     console.log("not connected")
+// })
+//initial middelware : 
+
 //routes
 app.use('/users', personRouter);
 //ici les liens des routes :

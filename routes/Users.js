@@ -12,11 +12,11 @@ const { body, validationResult } = require('express-validator');
 
 router.post(
   '/',
-   body('name').not().isEmpty(),
+   body('name', "you have to put a name").not().isEmpty(),
   // username must be an email
-  body('email').isEmail(),
+  body('email',"enter a valid mail please").isEmail(),
   // password must be at least 5 chars long
-  body('password').isLength({ min: 5 }),createUser
+  body('password',"your password have to be min 5 caracters").isLength({ min: 5 }),createUser
 );
 
 // // update 

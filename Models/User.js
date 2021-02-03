@@ -1,7 +1,7 @@
 let mongoose = require("mongoose");
 
 //Create a person having this prototype:
-let peapleSchema = new mongoose.Schema({
+let UserSchema = new mongoose.Schema({
   name: {
     type: String,
     required: true,
@@ -25,4 +25,4 @@ let peapleSchema = new mongoose.Schema({
   }
 });
 
-module.exports = Person = mongoose.model("Person", peapleSchema);
+module.exports = User = mongoose.model("user", UserSchema);

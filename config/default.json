@@ -1,0 +1,6 @@
+{
+  "mongoURI": "mongodb+srv://kamikaze:kaito123.HM@cluster0.8mco3.mongodb.net/kamikaze?retryWrites=true&w=majority",
+  "jwtSecret": "mysecrettoken",
+  "githubClientId": "8d3a0a4430c10181ea13",
+  "githubSecret": "e31967b663a32799ba1236287eef8a411ceac1a8"
+}

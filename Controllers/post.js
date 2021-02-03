@@ -1,4 +1,4 @@
-const  Person  = require('../Models/Person');
+const  User  = require('../Models/User');
 
 const sayPost = async (req, res) => {
 
